@@ -1,37 +1,3 @@
-<!-- <template>
-  <div class="flex w-100 overflow-hidden">
-    <div class="sidebar-container flex">
-      <LayoutsAdminSidebar
-        :isOpen="sidebarState"
-        @handleChangeSidebarState="handleChangeSidebarState"
-      />
-    </div>
-
-    <div
-      :style="{
-        width: sidebarState ? 'calc(100% - 250px)' : 'calc(100% - 50px)',
-      }"
-      class="px-20 h-100-dvh flex flex-column"
-    >
-      <LayoutsAdminTopbar />
-      <div class="page-content flex mt-10">
-        <NuxtPage />
-      </div>
-    </div>
-  </div>
-</template>
-
-
-
-<style scoped>
-.page-content {
-  min-height: 90dvh;
-  max-height: 90dvh;
-  overflow-y: scroll;
-  background: red;
-}
-</style> -->
-
 <template>
   <div class="layout-container">
     <div class="sidebar-container">

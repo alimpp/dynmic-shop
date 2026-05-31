@@ -5,6 +5,7 @@
     :class="{
       'w-250-px': isOpen,
       'w-70-px': !isOpen,
+      'custom-radius-fa-lang': locale == 'fa',
     }"
   >
     <div class="logo-content flex align-center h-60-px">
@@ -60,11 +61,15 @@ const handleChangeSidebarState = (val) => {
 </script>
 
 <style scoped>
+.custom-radius-fa-lang {
+  border-radius: 30px 0 0 30px !important;
+}
 .sidebar-content {
   height: 100vh;
   overflow: hidden;
-  background: #69abf2;
+  background: #011325;
   color: #fff;
+  border-radius: 0 30px 30px 0;
 }
 .mobile-icon {
   display: none;
@@ -75,6 +80,7 @@ const handleChangeSidebarState = (val) => {
     position: fixed;
     z-index: 100;
     width: 100%;
+    border-radius: 0 !important;
   }
   .desktop-icon {
     display: none;

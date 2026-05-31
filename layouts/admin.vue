@@ -46,7 +46,6 @@ const handleHiddenState = (val) => {
 
 .sidebar-container {
   flex-shrink: 0;
-  background-color: #f4f4f4;
 }
 
 .main-content {

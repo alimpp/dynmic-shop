@@ -1,6 +1,8 @@
 <template>
   <div class="topbar-container">
-    <div class="flex align-center w-50 px-10"></div>
+    <div class="flex align-center w-50 px-10">
+      <LayoutsAdminSelectLang />
+    </div>
     <div class="flex align-center justify-end w-50 px-10">
       <BaseIcon
         name="menu"

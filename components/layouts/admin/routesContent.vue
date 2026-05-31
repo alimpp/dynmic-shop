@@ -7,11 +7,14 @@
     >
       <div
         class="flex cursor-pointer"
-        :class="{ 'justify-center': !sidebarState }"
+        :class="{
+          'justify-center': !sidebarState,
+          'active-parent': route.path === activeParent,
+        }"
         @click="handleOpenChild(route)"
       >
         <BaseIcon :name="route.icon" size="20" />
-        <div class="w-100" v-if="sidebarState">
+        <div class="w-100 mx-5" v-if="sidebarState">
           <span class="f-s-15 f-w-600 px-3">{{ $t(route.name) }}</span>
         </div>
         <div v-if="sidebarState">
@@ -24,8 +27,11 @@
         v-for="child in route.childs"
         v-if="route.open && sidebarState"
       >
-        <div class="flex align-center">
-          <BaseIcon name="dot" />
+        <div
+          class="flex align-center"
+          :class="{ 'active-child': child.route === activeChild }"
+        >
+          <BaseIcon name="dot" class="mt-5" v-if="child.route != activeChild" />
           <span class="f-s-13 f-w-600 cursor-pointer">{{
             $t(child.name)
           }}</span>
@@ -36,12 +42,23 @@
 </template>
 
 <script setup>
+import { useRoute } from "vue-router";
+const route = useRoute();
+
 import { routes } from "../../../consts/admin";
 
 const emit = defineEmits(["openSidebar"]);
 
 const props = defineProps({
   sidebarState: { type: Boolean },
+});
+
+const activeParent = computed(() => {
+  return route.path.split("/")[2];
+});
+
+const activeChild = computed(() => {
+  return route.path.split("/")[3];
 });
 
 const handleOpenChild = (route) => {
@@ -54,6 +71,15 @@ const handleOpenChild = (route) => {
 </script>
 
 <style scoped>
+.active-parent {
+  background: #2a024b;
+  border-radius: 15px;
+  padding: 3px 5px;
+}
+.active-child {
+  border-bottom: 1px solid #ffffff28;
+  padding: 8px 0;
+}
 .routes-content {
   height: 85vh;
   overflow-y: auto;

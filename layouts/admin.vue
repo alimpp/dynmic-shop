@@ -3,13 +3,15 @@
     <div class="sidebar-container">
       <LayoutsAdminSidebar
         :isOpen="sidebarState"
+        :hiddenState="hiddenState"
         @handleChangeSidebarState="handleChangeSidebarState"
+        @handleHiddenState="handleHiddenState"
       />
     </div>
 
     <div class="main-content">
       <header class="topbar-container">
-        <LayoutsAdminTopbar />
+        <LayoutsAdminTopbar @handleHiddenState="handleHiddenState" />
       </header>
 
       <main class="page-content">
@@ -21,9 +23,14 @@
 
 <script setup>
 const sidebarState = ref(true);
+const hiddenState = ref(true);
 
 const handleChangeSidebarState = (val) => {
   sidebarState.value = val;
+};
+
+const handleHiddenState = (val) => {
+  hiddenState.value = val;
 };
 </script>
 

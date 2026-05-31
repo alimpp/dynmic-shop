@@ -11,7 +11,7 @@
         @click="handleOpenChild(route)"
       >
         <BaseIcon :name="route.icon" size="20" />
-        <div class="w-190-px" v-if="sidebarState">
+        <div class="w-100" v-if="sidebarState">
           <span class="f-s-15 f-w-600">{{ route.name }}</span>
         </div>
         <div v-if="sidebarState">
@@ -20,10 +20,9 @@
         </div>
       </div>
       <div
-        class="flex flex-column px-20 pt-5 fade-animation"
+        class="flex flex-column px-20 pt-5 fade-animation children-style"
         v-for="child in route.childs"
         v-if="route.open && sidebarState"
-        style="color: #505050"
       >
         <div class="flex align-center">
           <BaseIcon name="dot" />
@@ -56,6 +55,9 @@ const handleOpenChild = (route) => {
 .routes-content {
   height: 85vh;
   overflow-y: auto;
+}
+.children-style{
+  color: #dbd3d3;
 }
 .routes-content::-webkit-scrollbar {
   display: none;

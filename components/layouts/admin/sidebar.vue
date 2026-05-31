@@ -1,7 +1,11 @@
 <template>
   <div
-    class="sidebar-content flex flex-column"
-    :class="{ 'w-250-px': isOpen, 'w-70-px': !isOpen }"
+    class="sidebar-content flex flex-column fade-animation"
+    v-if="hiddenState"
+    :class="{
+      'w-250-px': isOpen,
+      'w-70-px': !isOpen,
+    }"
   >
     <div class="logo-content flex align-center h-60-px">
       <div
@@ -13,9 +17,14 @@
       <div class="w-50 flex justify-end" v-if="isOpen">
         <BaseIcon
           name="arrow-left"
-          class="mx-10 cursor-pointer"
+          class="mx-10 cursor-pointer desktop-icon"
           v-if="isOpen"
           @click="handleChangeSidebarState(false)"
+        />
+        <BaseIcon
+          name="close"
+          class="mx-10 cursor-pointer mobile-icon"
+          @click="emit('handleHiddenState', false)"
         />
       </div>
     </div>
@@ -29,10 +38,11 @@
 </template>
 
 <script setup>
-const emit = defineEmits(["handleChangeSidebarState"]);
+const emit = defineEmits(["handleChangeSidebarState", "handleHiddenState"]);
 
 const props = defineProps({
   isOpen: { type: Boolean },
+  hiddenState: { type: Boolean },
 });
 
 const handleChangeSidebarState = (val) => {
@@ -44,7 +54,24 @@ const handleChangeSidebarState = (val) => {
 .sidebar-content {
   height: 100vh;
   overflow: hidden;
-  background: #303030;
+  background: #69abf2;
   color: #fff;
+}
+.mobile-icon {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .sidebar-content {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+  }
+  .desktop-icon {
+    display: none;
+  }
+  .mobile-icon {
+    display: flex;
+  }
 }
 </style>

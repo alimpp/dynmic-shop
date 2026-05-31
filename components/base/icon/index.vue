@@ -63,6 +63,18 @@ const iconsMap: Record<string, string> = {
       <path fill="currentColor" d="M7.748 46.002c3.07.248 8.17.498 16.252.498s13.181-.25 16.252-.498c3.113-.252 5.515-2.618 5.79-5.737c.302-3.401.405-7.295.44-9.765h-12.32a1.5 1.5 0 0 0-1.423 1.026l-.632 1.897a4.5 4.5 0 0 1-4.27 3.077h-7.675a4.5 4.5 0 0 1-4.27-3.077l-.632-1.897a1.5 1.5 0 0 0-1.423-1.026H1.517c.036 2.47.139 6.364.44 9.765c.275 3.119 2.678 5.485 5.79 5.737" />
     </svg>
   `,
+  close: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 7l10 10M7 17L17 7" />
+    </svg>
+  `,
+  menu: `
+   <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path fill="currentColor" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1m0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1M3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1" />
+    </svg>
+  `,
 };
 
 const props = defineProps({

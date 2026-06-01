@@ -13,7 +13,7 @@
         class="w-50 flex px-10"
         :class="{ 'w-50-px': !isOpen, 'justify-center align-center': !isOpen }"
       >
-        <img src="/public/logo/logo.png" alt="logo" width="100" />
+        <img src="/public/logo/logo.png" alt="logo" width="50" />
       </div>
       <div class="w-50 flex justify-end" v-if="isOpen">
         <BaseIcon

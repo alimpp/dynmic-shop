@@ -1,9 +1,10 @@
 <template>
   <div class="flex">
-    <span class="f-s-14 f-w-500 color-primary">APP</span>
-    <span class="f-s-14 f-w-500 px-4 color-primary">/</span>
-    <span class="f-s-14 f-w-500" v-for="(item, index) in source" :key="index">
-      {{ item }} <span v-if="index + 1 < source.length"> / </span></span
+    <BaseIcon name="app" />
+    <span class="f-s-15 f-w-500 color-primary px-5">{{ $t("Admin") }}</span>
+    <span class="f-s-15 f-w-500 px-5 color-primary">/</span>
+    <span class="f-s-15 f-w-500 px-5" v-for="(item, index) in source" :key="index">
+      {{ $t(item) }} <span v-if="index + 1 < source.length"> / </span></span
     >
   </div>
 </template>

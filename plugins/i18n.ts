@@ -8,6 +8,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     fallbackLocale: "en",
     messages: {
       fa: {
+        Admin: "ادمین",
         Dashboard: "داشبورد",
         Customers: "مشتریان",
         Styles: "استایل",
@@ -17,8 +18,12 @@ export default defineNuxtPlugin((nuxtApp) => {
         Hero: "هیرو",
         Banners: "بنرها",
         Services: "سرویس ها",
+        "Select Color": "رنگ را انتخاب کنید",
+        "Please Select Color Main Background Application":
+          "لطفا رنگ اصلی مورد نظر را برای برنامه انتخاب کنید",
       },
       en: {
+        Admin: "Admin",
         Dashboard: "Dashboard",
         Customers: "Customers",
         Styles: "Styles",
@@ -28,6 +33,9 @@ export default defineNuxtPlugin((nuxtApp) => {
         Hero: "Hero",
         Banners: "Banners",
         Services: "Services",
+        "Select Color": "Selected Color",
+        "Please Select Color Main Background Application":
+          "Please Select Color For Main Background Application",
       },
     },
   });
